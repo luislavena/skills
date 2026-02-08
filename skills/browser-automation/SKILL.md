@@ -15,6 +15,8 @@ Use `agent-browser` (via `npx agent-browser`) to walk through the target site. T
 
 When presented with multiple options, ask the user for confirmation before proceeding.
 
+**IMPORTANT:** Present the summary to the user and **wait for their confirmation** before proceeding to Phase 2. The user may want to adjust the flow, correct assumptions, or add steps before any code is generated.
+
 ### 1.1 Open the page
 
 ```
