@@ -5,6 +5,20 @@
  *   node bin/{{SCRIPT_NAME}}.mjs [--headed]
  *
  * Requires: playwright (npm install playwright)
+ *
+ * ---
+ * Original request:
+ *   {{ORIGINAL_REQUEST}}
+ *
+ * Flow modifications:
+ *   {{FLOW_MODIFICATIONS}}
+ *
+ * Workflow summary:
+ *   {{WORKFLOW_SUMMARY}}
+ *
+ * Generated: {{GENERATED_DATE}}
+ * Target: {{TARGET_URL}}
+ * ---
  */
 
 import { chromium } from "playwright";

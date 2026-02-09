@@ -94,7 +94,23 @@ Use the template in [templates/playwright-script.mjs](templates/playwright-scrip
 - Error handling with screenshot capture
 - `--headed` CLI flag for visual debugging
 
-Adapt the template to the specific workflow. Every script should:
+#### Fill in the script header metadata
+
+The template header contains metadata placeholders that **must be filled in** so the script is self-documenting. When someone opens the file later, the header should give them full context about what it does and why.
+
+| Placeholder | What to write |
+|---|---|
+| `{{ORIGINAL_REQUEST}}` | The user's original instructions, quoted verbatim or closely paraphrased. Wrap to 72 characters with leading whitespace to stay inside the comment block. |
+| `{{FLOW_MODIFICATIONS}}` | Any changes the user requested after reviewing the exploration summary (added steps, removed steps, adjusted parameters). Write "None" if the user approved the flow without changes. |
+| `{{WORKFLOW_SUMMARY}}` | A numbered list of the high-level steps the script performs (e.g. "1. Navigate to booking page, 2. Select date and time, 3. Add to cart, 4. Validate summary"). One step per line, indented to align inside the comment block. |
+| `{{GENERATED_DATE}}` | The current date in YYYY-MM-DD format. |
+| `{{TARGET_URL}}` (header) | Same value as the `TARGET_URL` constant in the script body. |
+
+This metadata block serves as a quick reference when revisiting the script. Keep each field concise but complete enough to understand the intent without reading the code.
+
+#### Adapt the template to the workflow
+
+Every script should:
 
 1. Accept a `--headed` flag so users can watch the browser.
 2. Log each step to the console with clear descriptions.
