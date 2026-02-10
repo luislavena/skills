@@ -16,12 +16,29 @@
  * Workflow summary:
  *   {{WORKFLOW_SUMMARY}}
  *
+ * Required environment variables:
+ *   {{REQUIRED_ENV_VARS}}
+ *
  * Generated: {{GENERATED_DATE}}
  * Target: {{TARGET_URL}}
  * ---
  */
 
 import { chromium } from "playwright";
+
+// ---------------------------------------------------------------------------
+// Environment variables
+// ---------------------------------------------------------------------------
+
+// When the workflow requires credentials or secrets, read them from the
+// environment at runtime. Never hardcode sensitive values.
+//
+// Example:
+//   const username = process.env.HTTP_USERNAME;
+//   const password = process.env.HTTP_PASSWORD;
+//   if (!username || !password) {
+//     throw new Error("Missing required env vars: HTTP_USERNAME, HTTP_PASSWORD");
+//   }
 
 const TARGET_URL = "{{TARGET_URL}}";
 

@@ -80,6 +80,36 @@ Before moving to Phase 2, compile a **Site exploration notes** block for yoursel
 
 This catalog is the source of truth for the script you will generate.
 
+## Credential and environment variable handling
+
+When the user asks to use environment variables for credentials (e.g. HTTP Basic Auth usernames, passwords, API keys), follow these rules strictly:
+
+1. **Never read environment variable values into the conversation context.** Do not run `echo $VAR`, `printenv VAR`, or any command that would expose the secret in tool output.
+2. **Interpolate as shell variables in commands.** When constructing URLs or passing credentials in shell commands, reference them directly as `${VAR_NAME}` so the shell resolves them at runtime:
+
+   ```
+   npx agent-browser open "https://${HTTP_USERNAME}:${HTTP_PASSWORD}@example.com/protected"
+   ```
+
+3. **Use `process.env` in generated scripts.** In the Playwright script, read credentials from the environment at runtime:
+
+   ```js
+   const username = process.env.HTTP_USERNAME;
+   const password = process.env.HTTP_PASSWORD;
+   if (!username || !password) {
+     throw new Error("Missing required environment variables: HTTP_USERNAME, HTTP_PASSWORD");
+   }
+   ```
+
+4. **Document required variables.** Add a "Required environment variables" section to the script header listing every variable the script expects, without default values or examples that could leak secrets.
+5. **Include in run instructions.** When presenting the result, show how to pass variables:
+
+   ```
+   HTTP_USERNAME=<value> HTTP_PASSWORD=<value> node bin/script.mjs
+   ```
+
+   Or note that they should be exported beforehand.
+
 ## Phase 2: Script generation
 
 Translate the exploration notes into a standalone Playwright script.
@@ -103,6 +133,7 @@ The template header contains metadata placeholders that **must be filled in** so
 | `{{ORIGINAL_REQUEST}}` | The user's original instructions, quoted verbatim or closely paraphrased. Wrap to 72 characters with leading whitespace to stay inside the comment block. |
 | `{{FLOW_MODIFICATIONS}}` | Any changes the user requested after reviewing the exploration summary (added steps, removed steps, adjusted parameters). Write "None" if the user approved the flow without changes. |
 | `{{WORKFLOW_SUMMARY}}` | A numbered list of the high-level steps the script performs (e.g. "1. Navigate to booking page, 2. Select date and time, 3. Add to cart, 4. Validate summary"). One step per line, indented to align inside the comment block. |
+| `{{REQUIRED_ENV_VARS}}` | A list of environment variables the script needs at runtime (e.g. `HTTP_USERNAME`, `HTTP_PASSWORD`). Write "None" if the script does not require any. Never include actual values or examples that could leak secrets. |
 | `{{GENERATED_DATE}}` | The current date in YYYY-MM-DD format. |
 | `{{TARGET_URL}}` (header) | Same value as the `TARGET_URL` constant in the script body. |
 

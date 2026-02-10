@@ -20,6 +20,33 @@ Detailed reference for the interactive exploration phase using `agent-browser`.
 | Find element and act | `npx agent-browser find text "Submit" click` |
 | Get element attribute | `npx agent-browser get attr data-id @e1` |
 
+## Handling credentials during exploration
+
+When the target site requires authentication (HTTP Basic Auth, login forms, API keys), use environment variables and **never read their values into the conversation**.
+
+### HTTP Basic Auth
+
+Embed credentials in the URL using shell variable interpolation:
+
+```
+npx agent-browser open "https://${HTTP_USERNAME}:${HTTP_PASSWORD}@example.com/protected"
+```
+
+### Login forms
+
+Fill fields using shell variables so values are resolved at runtime and never appear in tool output:
+
+```
+npx agent-browser fill @e3 "${LOGIN_EMAIL}"
+npx agent-browser fill @e5 "${LOGIN_PASSWORD}"
+```
+
+### Key rules
+
+- **Do not** run `echo`, `printenv`, or any command that prints secret values.
+- **Do not** hardcode credentials in commands or scripts. Always use `${VAR_NAME}` in shell commands and `process.env.VAR_NAME` in JavaScript.
+- If a variable is not set, commands will fail with an empty value. Instruct the user to export the required variables before starting the exploration session.
+
 ## Dealing with bot protection
 
 Many production sites use CDN-level bot detection (Akamai, Cloudflare, PerimeterX). Symptoms include:
