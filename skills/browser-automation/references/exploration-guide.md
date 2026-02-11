@@ -19,6 +19,7 @@ Detailed reference for the interactive exploration phase using `agent-browser`.
 | Close browser | `npx agent-browser close` |
 | Find element and act | `npx agent-browser find text "Submit" click` |
 | Get element attribute | `npx agent-browser get attr data-id @e1` |
+| Set HTTP credentials | `npx agent-browser set credentials <user> <pass>` |
 
 ## Handling credentials during exploration
 
@@ -26,10 +27,14 @@ When the target site requires authentication (HTTP Basic Auth, login forms, API 
 
 ### HTTP Basic Auth
 
-Embed credentials in the URL using shell variable interpolation:
+Set credentials before navigating to the protected resource:
 
 ```
-npx agent-browser open "https://${HTTP_USERNAME}:${HTTP_PASSWORD}@example.com/protected"
+# Set credentials (shell resolves variables at runtime)
+npx agent-browser set credentials ${HTTP_USERNAME} ${HTTP_PASSWORD}
+
+# Navigate to protected resource
+npx agent-browser open "https://example.com/protected"
 ```
 
 ### Login forms
