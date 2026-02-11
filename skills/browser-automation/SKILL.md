@@ -85,10 +85,14 @@ This catalog is the source of truth for the script you will generate.
 When the user asks to use environment variables for credentials (e.g. HTTP Basic Auth usernames, passwords, API keys), follow these rules strictly:
 
 1. **Never read environment variable values into the conversation context.** Do not run `echo $VAR`, `printenv VAR`, or any command that would expose the secret in tool output.
-2. **Interpolate as shell variables in commands.** When constructing URLs or passing credentials in shell commands, reference them directly as `${VAR_NAME}` so the shell resolves them at runtime:
+2. **Interpolate as shell variables in commands.** When passing credentials in shell commands, reference them directly as `${VAR_NAME}` so the shell resolves them at runtime:
 
    ```
-   npx agent-browser open "https://${HTTP_USERNAME}:${HTTP_PASSWORD}@example.com/protected"
+   # Set credentials before navigation
+   npx agent-browser set credentials ${HTTP_USERNAME} ${HTTP_PASSWORD}
+
+   # Navigate to protected resource
+   npx agent-browser open "https://example.com/protected"
    ```
 
 3. **Use `process.env` in generated scripts.** In the Playwright script, read credentials from the environment at runtime:
