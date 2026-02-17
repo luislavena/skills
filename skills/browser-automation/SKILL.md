@@ -214,9 +214,9 @@ If headless mode fails where headed mode succeeded, the cause is almost always o
 | Headless-specific symptom | Likely cause | Fix |
 |---|---|---|
 | Access Denied / blank page | Bot detection triggers on headless | Ensure anti-detection args and custom UA are set in the script |
-| Element not visible / click intercepted | Viewport size differs in headless | Set an explicit viewport size in the browser context |
+| Element not visible / click intercepted | Viewport too small for element | Increase viewport dimensions or scroll element into view |
 | Timeout waiting for selector | Lazy loading needs a visible window | Add `waitForSelector` with longer timeout, or trigger scroll via `page.evaluate()` |
-| Screenshot shows different layout | Default headless viewport is smaller | Match headed viewport: `viewport: { width: 1280, height: 720 }` |
+| Screenshot shows different layout | Site has responsive breakpoints | Adjust viewport to match target device width |
 
 #### Step 3: Confirm both pass
 
