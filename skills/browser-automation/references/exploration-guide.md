@@ -166,6 +166,73 @@ E-commerce and ticketing sites use +/- buttons around a quantity display. The di
 
 Slot or product availability is often stored in `data-*` attributes (e.g. `data-availability="available"`) rather than visible text. Always check these attributes via `eval` rather than relying solely on the snapshot.
 
+### Iframes
+
+Many sites embed critical functionality inside iframes: payment forms (Stripe, Braintree), chat widgets (Intercom, Zendesk), third-party consent managers, and embedded content (maps, videos). Recognizing and documenting iframes during exploration is essential because interacting with iframe content requires special handling in the generated script.
+
+**Signs that an element is inside an iframe:**
+
+- The snapshot shows an `iframe` element but the content you expect is missing
+- Clicking a button opens a modal that does not appear in subsequent snapshots
+- The target element has a different origin visible in browser DevTools
+
+**Identifying iframes:**
+
+List all iframes on the page and their sources:
+
+```
+npx agent-browser eval "
+  const frames = document.querySelectorAll('iframe');
+  JSON.stringify([...frames].map(f => ({
+    id: f.id,
+    name: f.name,
+    src: f.src,
+    visible: f.offsetParent !== null
+  })));
+"
+```
+
+**Inspecting same-origin iframe content:**
+
+For iframes from the same origin, you can access their content via `eval`:
+
+```
+npx agent-browser eval "
+  const frame = document.querySelector('iframe#booking-widget');
+  const doc = frame?.contentDocument;
+  if (!doc) 'cross-origin or not loaded';
+  else JSON.stringify({
+    buttons: [...doc.querySelectorAll('button')].map(b => b.textContent.trim()),
+    inputs: [...doc.querySelectorAll('input')].map(i => i.name || i.id)
+  });
+"
+```
+
+**Cross-origin iframes:**
+
+Cross-origin iframes (e.g., `stripe.com` iframe on your site) cannot be inspected via `eval` due to browser security. During exploration, note:
+
+- The iframe selector (id, name, or CSS selector)
+- What action triggers the iframe to appear
+- What elements you expect inside based on the site's documentation or visual inspection
+
+The generated script will use Playwright's `frameLocator()` which can interact with cross-origin iframes.
+
+**Recording iframe details in exploration notes:**
+
+When you encounter an iframe, document:
+
+```
+### Iframe: Payment form
+- Selector: `iframe[name="stripe-frame"]`
+- Origin: cross-origin (stripe.com)
+- Appears after: clicking "Proceed to payment"
+- Contains: card number, expiry, CVC fields
+- Submit button: inside iframe, text "Pay now"
+```
+
+This information is critical for Phase 2, where you will use `page.frameLocator()` to interact with iframe content.
+
 ## Recording exploration notes
 
 After exploring the site, write a structured summary before generating the script. Include:

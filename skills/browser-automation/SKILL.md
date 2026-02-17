@@ -167,7 +167,48 @@ Every script should:
 4. **Text content** (via Playwright locators): `locator('li', { hasText: 'Full Rate' })`
 5. **`page.evaluate()`** as last resort for hidden elements or React state that does not respond to synthetic events.
 
-### 2.3 Timing strategy
+### 2.3 Iframe handling
+
+Many sites embed critical functionality inside iframes: payment forms (Stripe, Braintree), chat widgets, consent managers, and third-party widgets. Playwright cannot interact with iframe content using regular locators; you must use `frameLocator()` to scope into the iframe first.
+
+#### Basic pattern
+
+```js
+// Locate the iframe by its selector, then interact with elements inside it
+const paymentFrame = page.frameLocator('iframe[name="payment-form"]');
+await paymentFrame.locator('#card-number').fill('4242424242424242');
+await paymentFrame.locator('#expiry').fill('12/30');
+await paymentFrame.locator('#cvc').fill('123');
+await paymentFrame.getByRole('button', { name: 'Pay' }).click();
+```
+
+#### Key points
+
+- `frameLocator()` returns a locator-like object scoped to the iframe content
+- All standard locator methods (`.locator()`, `.getByRole()`, `.fill()`, `.click()`) work inside the frame
+- Playwright handles cross-origin iframes automatically; you do not need special permissions
+- Nested iframes require chaining: `page.frameLocator('#outer').frameLocator('#inner')`
+
+#### Common iframe scenarios
+
+| Scenario | Typical selector | Notes |
+|---|---|---|
+| Payment forms (Stripe) | `iframe[name*="stripe"]` | Multiple iframes for card number, expiry, CVC |
+| Chat widgets | `iframe[title*="chat"]` | Often appears after delay |
+| Consent managers | `iframe[src*="consent"]` | May block main page interaction |
+| Embedded maps | `iframe[src*="maps"]` | Usually read-only, rarely need interaction |
+
+#### Waiting for iframe content
+
+If the iframe loads content dynamically, wait for an element inside it before interacting:
+
+```js
+const frame = page.frameLocator('iframe#checkout');
+await frame.locator('#card-number').waitFor({ state: 'visible', timeout: 10000 });
+await frame.locator('#card-number').fill(cardNumber);
+```
+
+### 2.4 Timing strategy
 
 Never use arbitrary `waitForTimeout` as the primary wait. Prefer:
 

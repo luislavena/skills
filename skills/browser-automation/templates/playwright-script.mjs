@@ -49,6 +49,22 @@ const TARGET_URL = "{{TARGET_URL}}";
 // Add workflow-specific helpers here (date formatting, price parsing, etc.)
 
 // ---------------------------------------------------------------------------
+// Iframe handling
+// ---------------------------------------------------------------------------
+
+// When interacting with elements inside an iframe (payment forms, chat widgets,
+// consent managers), use frameLocator() to scope into the iframe first:
+//
+//   const paymentFrame = page.frameLocator('iframe[name="payment-form"]');
+//   await paymentFrame.locator('#card-number').fill(cardNumber);
+//   await paymentFrame.locator('#expiry').fill(expiry);
+//   await paymentFrame.locator('#cvc').fill(cvc);
+//   await paymentFrame.getByRole('button', { name: 'Pay' }).click();
+//
+// For nested iframes, chain frameLocator calls:
+//   page.frameLocator('#outer').frameLocator('#inner').locator('button')
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
