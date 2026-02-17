@@ -128,20 +128,26 @@ Use the template in [templates/playwright-script.mjs](templates/playwright-scrip
 - Error handling with screenshot capture
 - `--headed` CLI flag for visual debugging
 
-#### Fill in the script header metadata
+#### Fill in template placeholders
 
-The template header contains metadata placeholders that **must be filled in** so the script is self-documenting. When someone opens the file later, the header should give them full context about what it does and why.
+The template contains placeholders that **must be filled in** so the script is self-documenting. When someone opens the file later, the header should give them full context about what it does and why.
 
 | Placeholder | What to write |
 |---|---|
+| `{{SCRIPT_DESCRIPTION}}` | A one-line summary of what the script does (e.g., "Books a time slot on example.com and validates the cart"). Keep it under 80 characters. |
+| `{{SCRIPT_NAME}}` | The filename without the `.mjs` extension. Must match the actual file you create (e.g., `book-timeslot` if the file is `bin/book-timeslot.mjs`). |
 | `{{ORIGINAL_REQUEST}}` | The user's original instructions, quoted verbatim or closely paraphrased. Wrap to 72 characters with leading whitespace to stay inside the comment block. |
 | `{{FLOW_MODIFICATIONS}}` | Any changes the user requested after reviewing the exploration summary (added steps, removed steps, adjusted parameters). Write "None" if the user approved the flow without changes. |
 | `{{WORKFLOW_SUMMARY}}` | A numbered list of the high-level steps the script performs (e.g. "1. Navigate to booking page, 2. Select date and time, 3. Add to cart, 4. Validate summary"). One step per line, indented to align inside the comment block. |
 | `{{REQUIRED_ENV_VARS}}` | A list of environment variables the script needs at runtime (e.g. `HTTP_USERNAME`, `HTTP_PASSWORD`). Write "None" if the script does not require any. Never include actual values or examples that could leak secrets. |
 | `{{GENERATED_DATE}}` | The current date in YYYY-MM-DD format. |
-| `{{TARGET_URL}}` (header) | Same value as the `TARGET_URL` constant in the script body. |
+| `{{TARGET_URL}}` | The target URL for the automation. This value appears in both the header comment and the `TARGET_URL` constant in the script body; use the same value for both. |
 
 This metadata block serves as a quick reference when revisiting the script. Keep each field concise but complete enough to understand the intent without reading the code.
+
+**Step comments:** The template includes numbered step sections with placeholder comments (e.g., `Step 2: {{STEP_2_DESCRIPTION}}`). Replace each placeholder with a brief description of that step's action (e.g., "Select date from calendar"). Add or remove step sections as needed to match the workflow discovered in Phase 1.
+
+**Validation checkpoint:** Before testing, search the script for `{{` to confirm no unfilled placeholders remain.
 
 #### Adapt the template to the workflow
 
