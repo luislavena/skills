@@ -20,13 +20,29 @@
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: That's thorough research. Let me confirm I understand:
+**Critical Question**: Let's validate this. When you say "strong demand," what does that mean specifically?
+- How many customers or prospects asked for this?
+- Is it blocking sales, or nice to have?
+- Which languages are being requested?
+
+---
+
+**User:** Here's what we know:
+- 23 enterprise prospects in Q3 were from non-English markets; 18 asked about localization during sales
+- 12 deals were lost explicitly citing "English-only" as a reason (documented in CRM)
+- Our survey of 400 European trial users showed 72% would "definitely" or "likely" upgrade if their local language was supported
+- Top requested languages: German (31%), French (28%), Spanish (22%), Dutch (9%)
+- Average deal size in EU markets is 35% higher than US deals
+
+**Claude (Idea validator):**
+
+**Valid Point**: That's thorough research. Let me confirm I understand:
 - 12 lost deals with explicit localization as reason
 - Survey data with 72% upgrade intent
 - Clear language priority ranking
 - 35% higher deal value in target market
 
-🤔 **Critical Question**: What's the estimated revenue impact? If you had localization today, how much additional revenue are we talking?
+**Critical Question**: What's the estimated revenue impact? If you had localization today, how much additional revenue are we talking?
 
 ---
 
@@ -40,9 +56,9 @@ We've also budgeted $150K for implementation including translation services.
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: Revenue projections tied to specific data points, and you've already scoped the investment. This is well-researched.
+**Valid Point**: Revenue projections tied to specific data points, and you've already scoped the investment. This is well-researched.
 
-🤔 **Critical Question**: Last few validation points:
+**Critical Question**: Last few validation points:
 1. Why those four languages in that order? Is German first because of demand volume or deal size?
 2. What's the MVP - do you need all four at launch, or can you phase?
 3. Have you considered ongoing translation costs for new features?
@@ -57,11 +73,11 @@ Ongoing costs: we've budgeted $40K/year for translation maintenance based on our
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: Clear prioritization logic, phased rollout, and maintenance budget included.
+**Valid Point**: Clear prioritization logic, phased rollout, and maintenance budget included.
 
-I've been pushing hard but I'm not finding gaps. Let me check a few edge cases:
+I've been challenging this, but I'm not finding gaps. Let me check a few edge cases:
 
-🤔 **Critical Question**: 
+**Critical Question**: 
 - What about right-to-left languages for future expansion (Arabic, Hebrew)?
 - Are there locale-specific features beyond translation (date formats, currency, legal requirements)?
 - How will you handle customer support in these languages?
@@ -76,18 +92,18 @@ Support: we're hiring two multilingual support reps (German/French) and will use
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: RTL scope decision is reasonable given data. Support plan is practical.
+**Valid Point**: RTL scope decision is reasonable given data. Support plan is practical.
 
 At this point, you've addressed everything I'd typically challenge:
-- ✅ Evidence of demand (lost deals, survey data)
-- ✅ Revenue projections tied to real numbers
-- ✅ Clear prioritization based on data
-- ✅ Phased approach reducing risk
-- ✅ Budget for initial and ongoing costs
-- ✅ Scope boundaries defined (RTL out)
-- ✅ Support plan included
+- Evidence of demand (lost deals, survey data)
+- Revenue projections tied to real numbers
+- Clear prioritization based on data
+- Phased approach reducing risk
+- Budget for initial and ongoing costs
+- Scope boundaries defined (RTL out)
+- Support plan included
 
-🤔 **Critical Question**: One final check - what's your confidence level that the 72% survey intent translates to actual upgrades? Survey intent typically overstates real conversion.
+**Critical Question**: One final check - what's your confidence level that the 72% survey intent translates to actual upgrades? Survey intent typically overstates real conversion.
 
 ---
 
@@ -95,9 +111,9 @@ At this point, you've addressed everything I'd typically challenge:
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: You've already discounted the optimistic projection. That's exactly the right approach.
+**Valid Point**: You've already discounted the optimistic projection. That's exactly the right approach.
 
-I'm backing off. You've done your homework. This is a well-validated initiative with:
+I'm stepping back. You've done your homework. This is a well-validated initiative with:
 - Clear problem (lost deals, market access)
 - Quantified impact (revenue projections with discounted expectations)
 - Defined scope (language priority, phased rollout)

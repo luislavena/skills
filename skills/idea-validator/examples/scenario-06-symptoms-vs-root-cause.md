@@ -4,7 +4,7 @@
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: Alerts are reactive - they tell you after something's wrong. How often do these slowdowns happen? And what do you do when you find out?
+**Critical Question**: Alerts are reactive - they tell you after something's wrong. How often do these slowdowns happen? And what do you do when you find out?
 
 ---
 
@@ -12,9 +12,9 @@
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Wait. You're proposing an alert system so you can find out faster that something needs restarting. But the question is: why does your service need restarting 2-3 times per month?
+**Challenge**: Hold on. You're proposing an alert system so you can find out faster that something needs restarting. But the question is: why does your service need restarting 2-3 times per month?
 
-🤔 **Critical Question**: What's causing the slowdowns in the first place?
+**Critical Question**: What's causing the slowdowns in the first place?
 - Memory leaks?
 - Database connection exhaustion?
 - Cache getting stale?
@@ -28,9 +28,9 @@ Building alerts helps you respond faster, but doesn't solve the underlying probl
 
 **Claude (Idea validator):**
 
-❌ **Red Flag**: "Not 100% sure" and "seems random" are huge warning signs. You want to build monitoring for a problem you don't understand.
+**Critical Observation**: "Not 100% sure" and "seems random" are warning signs. You want to build monitoring for a problem you don't understand.
 
-🤔 **Critical Question**: Let's apply the Five Whys:
+**Critical Question**: Let's apply the Five Whys:
 
 **Why** does the API slow down? → You don't know  
 **Why** don't you know? → You don't have visibility into what's happening  
@@ -38,7 +38,7 @@ Building alerts helps you respond faster, but doesn't solve the underlying probl
 **Why** no logging/metrics? → Never set it up properly  
 **Why** is restarting the solution? → It's faster than debugging  
 
-See the real problem? It's not "we need faster alerts." It's "we don't understand why our service degrades."
+Do you see the real problem? It's not "we need faster alerts." It's "we don't understand why our service degrades."
 
 ---
 
@@ -46,7 +46,7 @@ See the real problem? It's not "we need faster alerts." It's "we don't understan
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Earlier awareness of a problem you can't diagnose just means earlier stress, not earlier resolution.
+**Challenge**: Earlier awareness of a problem you can't diagnose just means earlier stress, not earlier resolution.
 
 Let's say you build perfect alerts and get notified within 1 minute of slowdowns. What then?
 - You still don't know the cause
@@ -54,7 +54,7 @@ Let's say you build perfect alerts and get notified within 1 minute of slowdowns
 - You still have the underlying issue
 - It happens again next week
 
-🤔 **Critical Question**: What's the cost of these incidents today?
+**Critical Question**: What's the cost of these incidents today?
 - How long are users affected?
 - What's the business impact?
 - How long does it take from "noticing" to "fixed"?
@@ -65,11 +65,11 @@ Let's say you build perfect alerts and get notified within 1 minute of slowdowns
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: So the current problem is ~20-35 minutes of degradation, 2-3 times per month. With alerts, you'd reduce that to ~6-10 minutes (1 min to notice + 5 min to fix).
+**Critical Question**: So the current problem is ~20-35 minutes of degradation, 2-3 times per month. With alerts, you'd reduce that to ~6-10 minutes (1 min to notice + 5 min to fix).
 
 But here's the thing: the problem keeps happening. Shouldn't you fix it permanently instead of getting faster at restarting?
 
-⚠️ **Challenge**: You have two paths:
+**Challenge**: You have two paths:
 
 **Path A: Build Alerts (treat symptom)**
 - Reduces incident duration by ~15-25 minutes
@@ -91,12 +91,12 @@ Which is the better use of engineering time?
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: What did "trying to figure it out" look like? 
+**Critical Question**: What did "trying to figure it out" look like? 
 - Did you have proper APM (Application Performance Monitoring)?
 - Were you logging memory, CPU, connection pools, query times?
 - Did you check it during an actual incident, or just after?
 
-⚠️ **Challenge**: "Couldn't find anything obvious" often means "we didn't have the right tools to look." Do you have visibility into:
+**Challenge**: "Couldn't find anything obvious" often means "we didn't have the right tools to look." Do you have visibility into:
 - Memory usage over time
 - Database query performance
 - Connection pool saturation
@@ -108,11 +108,11 @@ Which is the better use of engineering time?
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: There's your real problem. You can't diagnose because you can't observe.
+**Valid Point**: There's your real problem. You can't diagnose because you can't observe.
 
 The solution isn't "build alerts." The solution is "add observability so you can diagnose and fix the root cause."
 
-🤔 **Critical Question**: Would you consider this approach instead:
+**Critical Question**: Would you consider this approach instead:
 1. Set up basic APM (Datadog, New Relic, or even free Prometheus/Grafana)
 2. Instrument key metrics (memory, db queries, cache, response times)
 3. Wait for next incident and actually diagnose it
@@ -125,7 +125,7 @@ The solution isn't "build alerts." The solution is "add observability so you can
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Not quite. There's a critical difference:
+**Challenge**: Not quite. There's a critical difference:
 
 **What you asked for:** Alert when response time > 500ms  
 **What you need:** Understand WHY response time > 500ms

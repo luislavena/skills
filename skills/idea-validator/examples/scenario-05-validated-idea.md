@@ -4,7 +4,7 @@
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: Let's validate this. You said "several enterprise customers" - how many specifically? And what exactly did they ask for?
+**Critical Question**: Let's validate this. You said "several enterprise customers" - how many specifically? And what exactly did they ask for?
 
 - Did they ask for general data export or specific data?
 - Were these prospects who didn't close, or existing customers?
@@ -16,9 +16,9 @@
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: That's concrete. 4 prospects asking, 2 lost deals attributed to this issue. That's real revenue impact.
+**Valid Point**: That's concrete. 4 prospects asking, 2 lost deals attributed to this issue. That's real revenue impact.
 
-🤔 **Critical Question**: Let me dig deeper:
+**Critical Question**: Let me dig deeper:
 - What was the average deal size for those lost deals?
 - How many enterprise prospects do you typically have per quarter?
 - Did the 2 who closed still express concern?
@@ -31,7 +31,7 @@ I'm trying to understand if this is a blocking issue or a minor factor.
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Good data. Let me pressure-test though:
+**Challenge**: Good data. Let me pressure-test though:
 - Those 2 lost deals - was data export the primary reason they didn't close, or one of several factors?
 - Are there other blockers you're hearing more frequently?
 
@@ -43,12 +43,12 @@ I want to make sure we're solving the highest-impact problem, not just the most 
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: "Can't sign without data portability" is a clear gate. This passes the litmus test:
+**Valid Point**: "Can't sign without data portability" is a clear gate. This passes the litmus test:
 - If this doesn't exist, deals break
 - Real revenue impact ($160K+ lost)
 - Customers explicitly blocked by this
 
-🤔 **Critical Question**: Now let's define scope. What data do they need to export?
+**Critical Question**: Now let's define scope. What data do they need to export?
 - All user data?
 - Configuration and settings?
 - Historical analytics/reports?
@@ -68,12 +68,12 @@ Format-wise, they asked for "industry standard" - probably JSON or CSV. One ment
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: "Industry standard" is vague. Let's nail it down:
+**Challenge**: "Industry standard" is vague. Let's nail it down:
 - JSON for structured data (settings, configs)
 - CSV for tabular data (logs, user lists)
 - Original format for documents
 
-🤔 **Critical Question**: What about:
+**Critical Question**: What about:
 - Incremental exports (download changes since last export)?
 - Scheduled automatic exports?
 - Or just one-time "give me everything" download?
@@ -86,9 +86,9 @@ What did they actually ask for?
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: Good - keeping scope tight. On-demand full export only.
+**Valid Point**: Good - keeping scope tight. On-demand full export only.
 
-🤔 **Critical Question**: Two more things:
+**Critical Question**: Two more things:
 1. **Access control**: Who can trigger exports? Any user? Only admins?
 2. **Data sensitivity**: Any concerns about exporting data that contains OTHER users' information? (Privacy implications)
 
@@ -98,9 +98,9 @@ What did they actually ask for?
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: "Probably" isn't a requirement. Do your enterprise customers have specific privacy requirements, or is this your assumption?
+**Challenge**: "Probably" isn't a requirement. Do your enterprise customers have specific privacy requirements, or is this your assumption?
 
-🤔 **Critical Question**: Before we finalize, have you asked these prospects what they'd actually do with the exported data? Understanding the use case helps determine what to include/exclude.
+**Critical Question**: Before we finalize, have you asked these prospects what they'd actually do with the exported data? Understanding the use case helps determine what to include/exclude.
 
 ---
 
@@ -113,7 +113,7 @@ For compliance audits, they mostly want to prove capability, not actually export
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: Three clear use cases. Let me summarize what I'm hearing:
+**Valid Point**: Three clear use cases. Let me summarize what I'm hearing:
 
 **Use case priorities:**
 1. Compliance checkbox (must be possible, rarely used)
@@ -122,7 +122,7 @@ For compliance audits, they mostly want to prove capability, not actually export
 
 All three are served by a single "full export" feature. No need for multiple export types.
 
-🤔 **Critical Question**: Final validation - if you shipped this in 30 days, do you believe those lost deals would have closed?
+**Critical Question**: Final validation - if you shipped this in 30 days, do you believe those lost deals would have closed?
 
 ---
 
@@ -130,7 +130,7 @@ All three are served by a single "full export" feature. No need for multiple exp
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: That's your green light. This is a validated, well-defined requirement.
+**Valid Point**: That's your green light. This is a validated, well-defined requirement.
 
 **Summary for Proposal**:
 - **Problem**: Enterprise customers require data export capability for compliance and vendor lock-in concerns. This is blocking deals - 2 lost deals worth $160K ARR in last quarter, with explicit feedback that export was required.

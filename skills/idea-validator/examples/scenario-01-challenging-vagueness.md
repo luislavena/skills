@@ -4,9 +4,9 @@
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: That's extremely vague. "Productivity" means different things to different people. What specific productivity problem are you solving?
+**Challenge**: That's broad. "Productivity" means different things to different people. What specific productivity problem are you solving?
 
-🤔 **Critical Question**: When you say "users often waste time" - which users? Doing what tasks? And define "often" - are we talking multiple times per day, or occasionally throughout the week?
+**Critical Question**: When you say "users often waste time" - which users? Doing what tasks? And define "often" - are we talking multiple times per day, or occasionally throughout the week?
 
 I need concrete examples before we go any further. Describe one specific scenario where a real person (not a hypothetical user) struggled with productivity and what happened.
 
@@ -16,12 +16,12 @@ I need concrete examples before we go any further. Describe one specific scenari
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: "Sometimes" and "things" are still too vague. Give me numbers:
+**Challenge**: "Sometimes" and "things" are still ambiguous. Can we quantify this?
 - How often does this happen? Once a week? Daily?
 - What slips through? Emails? Project deadlines? Client commitments?
 - What's the actual consequence when something slips?
 
-🤔 **Critical Question**: Are you missing actual deadlines and losing money or clients? Or is this more of an "it would be nice if" situation?
+**Critical Question**: Are you missing actual deadlines and losing money or clients? Or is this more of an "it would be nice if" situation?
 
 Also - you just switched from "users" to "I and my coworkers." Are you solving YOUR problem or a market problem? Those require very different approaches.
 
@@ -31,15 +31,15 @@ Also - you just switched from "users" to "I and my coworkers." Are you solving Y
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: So the actual impact is "feeling disorganized" - not missed revenue, not angry clients, not project failures?
+**Critical Question**: So the actual impact is "feeling disorganized" - not missed revenue, not angry clients, not project failures?
 
-⚠️ **Challenge**: Let me push on this. You're describing 1-2 minor forgotten tasks per week with no material consequences. Before building an app, I need you to answer:
+**Challenge**: Let me push on this. You're describing 1-2 minor forgotten tasks per week with no material consequences. Before building an app, I need you to answer:
 
 1. What tools are you currently using? Calendar? Task manager? Sticky notes?
 2. Why aren't those working?
 3. Would a simple checklist or end-of-day review habit solve this?
 
-❌ **Red Flag**: This sounds like a workflow/habit issue being framed as a technology problem. "Feeling disorganized" is not a problem statement that justifies building software.
+**Observation**: This sounds like a workflow/habit issue being framed as a technology problem. "Feeling disorganized" is not a problem statement that justifies building software.
 
 What specific, measurable outcome would make this worth solving?
 
@@ -49,16 +49,16 @@ What specific, measurable outcome would make this worth solving?
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: "Reducing missed follow-ups to zero" is unrealistic - humans will always forget things occasionally. Let's be realistic about success criteria.
+**Challenge**: "Reducing missed follow-ups to zero" is unrealistic - humans will always forget things occasionally. Let's be realistic about success criteria.
 
-🤔 **Critical Question**: Have you considered using ANY existing task management tool? Asana, Trello, Todoist, even Apple Reminders? Why would you build something new instead of using what already exists?
+**Critical Question**: Have you considered using ANY existing task management tool? Asana, Trello, Todoist, even Apple Reminders? Why would you build something new instead of using what already exists?
 
 I'm skeptical because:
 - 1-2 forgotten minor tasks per week is extremely normal
 - No material business impact has been identified
 - Existing tools already solve task tracking
 
-⚠️ **Challenge**: Convince me this isn't just "I want to build something" looking for a justification. What's actually broken that existing tools can't fix?
+**Challenge**: Help me understand why existing tools can't fix this. What's actually broken?
 
 ---
 
@@ -66,11 +66,11 @@ I'm skeptical because:
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: Now we're getting somewhere honest. The problem isn't lack of tools - it's inconsistent usage.
+**Valid Point**: Now we're getting somewhere. The problem isn't lack of tools - it's inconsistent usage.
 
-🤔 **Critical Question**: If the team doesn't consistently use existing task tools, why would they consistently use YOUR task tool? What makes you think a new tool solves a behavior problem?
+**Critical Question**: If the team doesn't consistently use existing task tools, why would they consistently use YOUR task tool? What makes you think a new tool solves a behavior problem?
 
-❌ **Red Flag**: You've identified the real issue: adoption and habit, not tooling. Building another tool doesn't address the root cause.
+**Observation**: You've identified the real issue: adoption and habit, not tooling. Building another tool doesn't address the root cause.
 
 **Alternative to consider:**
 Before building anything, try this for 2 weeks:
