@@ -1,12 +1,5 @@
 # Scenario 1: Challenging Vagueness
 
-## Context
-A user presents a vague problem statement with undefined terms and unclear impact. This scenario demonstrates Phase 1 (Initial Challenge) and Phase 2 (Deep Questioning) with heavy use of the ⚠️ Challenge and 🤔 Critical Question signals.
-
----
-
-## Conversation
-
 **User:** I want to build an app that helps people be more productive. Users often waste time and need better organization.
 
 **Claude (Idea validator):**
@@ -87,19 +80,3 @@ Before building anything, try this for 2 weeks:
 If that doesn't work, THEN we can discuss whether tooling is the answer.
 
 **Reality check:** Most "productivity tools" fail because they add overhead, not because they lack features. You'd be building solution #5,000 in an overcrowded market where the core problem (human behavior) isn't solvable with software.
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Challenging vagueness | Initial response demanding specifics on "productive" and "often" |
-| Demanding quantification | Forcing numbers on frequency and impact |
-| Questioning real cost | "Feeling disorganized" vs. measurable harm |
-| Looking for simpler alternatives | Suggesting existing tools and behavior changes |
-| Identifying root cause | Exposing the adoption/habit problem vs. tool problem |
-| Reality check | Challenging whether the problem justifies a solution |
-
-## Outcome
-The conversation shifted from "I want to build a productivity app" to recognizing that the actual problem is inconsistent tool usage - a behavior issue, not a technology gap. The user was redirected to try a process change before building software.

@@ -1,12 +1,5 @@
 # Scenario 6: Symptoms vs. Root Cause
 
-## Context
-A user wants to build a feature that addresses symptoms of a deeper problem. Through questioning, the real issue is uncovered, which requires a different solution entirely. This scenario demonstrates the "Five Whys" approach and identifying when a proposed solution treats symptoms rather than causes.
-
----
-
-## Conversation
-
 **User:** I want to build an alert system that notifies the team when our API response times spike above 500ms. We keep getting surprised by slowdowns.
 
 **Claude (Idea validator):**
@@ -147,34 +140,3 @@ Alerts tell you "something is wrong." APM/observability tells you "here's what's
 - **User Value**: Eliminate recurring incidents rather than responding faster to them.
 
 **But consider:** The "restart to fix it" culture is a warning sign of technical debt. If this is a symptom of a larger pattern (poor visibility, unclear system behavior), you may need a broader reliability initiative, not just one fix.
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Identifying symptoms vs cause | "Why does the service need restarting?" |
-| Five Whys technique | Tracing back from symptom to root cause |
-| Challenging reactive solutions | "Alerts help you respond, not prevent" |
-| Exposing visibility gaps | "You can't diagnose because you can't observe" |
-| Comparing paths | Treat symptom vs. fix root cause |
-| Reframing the solution | Alerts → Observability |
-| Reality check on patterns | Technical debt warning |
-
-## Outcome
-The user's request for an "alert system" was reframed. The real problem wasn't slow response detection - it was lack of observability making root cause diagnosis impossible. The validated solution is implementing APM to diagnose and permanently fix the degradation, rather than building alerts to respond faster to a recurring problem.
-
-## The Problem Hierarchy Uncovered
-
-```
-Symptom:       "We get surprised by slowdowns"
-↓
-First attempt: "Build alerts to catch slowdowns faster"
-↓
-Real problem:  "We don't know why slowdowns happen"
-↓
-Root cause:    "We lack observability to diagnose issues"
-↓
-Real solution: "Implement observability, then fix root cause"
-```

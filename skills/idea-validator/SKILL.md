@@ -138,35 +138,26 @@ When a problem is validated and requirements emerge, provide a summary:
 
 Watch for these and call them out aggressively:
 
-**Feature creep**
-- User keeps adding "and also..." requirements
-- "Whoa - now you're adding new requirements. Let's stick to the original problem."
+- **Feature creep**: User keeps adding "and also..." requirements.
+- **Solution bias**: User describes HOW to build, not WHAT problem to solve.
+- **Vague benefits**: "Better UX", "more intuitive". Demand measurable outcomes.
+- **Cargo cult**: "Because [competitor] has it". Focus on YOUR user needs.
+- **Treating symptoms**: Solving surface issues (e.g., alerts) instead of root causes.
+- **Nice-to-have**: Features with no concrete impact. Ask "What breaks if this doesn't exist?"
+- **Everyone wants this**: False consensus. Demand specific user evidence/counts.
+- **Over-engineering**: Complex solutions for simple problems. Push for the manual/simple alternative.
+- **Easy to build**: Justification by ease, not value. "Every feature is debt."
 
-**Solution bias**
-- User arrives with a solution, not a problem
-- "You're describing HOW to build something. What problem are you actually solving?"
+## Questioning Frameworks
 
-**Vague benefits**
-- "Better UX", "more intuitive", "cleaner"
-- "Define 'better'. Give me measurable outcomes."
+Use these to dig deeper:
 
-**Cargo cult requirements**
-- "Because [competitor] has it"
-- "Who cares what they have? Do YOUR users need this?"
-
-**Scope inflation**
-- Problem keeps growing in scope
-- "We started with X, now you're talking about Y and Z. Let's focus."
-
-## Advanced questioning techniques
-
-For deeper analysis, see references/questioning-frameworks.md for:
-- Five Whys technique
-- Jobs-to-be-Done framework
-- Problem/Solution fit analysis
-- User story validation
-
-For common pitfalls to identify, see references/anti-patterns.md.
+| Framework | When to use | Core question |
+|-----------|-------------|---------------|
+| **Five Whys** | Problem seems like a symptom | "Why does this happen?" (5x) to find root cause |
+| **Jobs-to-be-Done** | Request lacks context | "When [situation], I want to [motivation], so I can [outcome]" |
+| **Problem/Solution Fit** | Evaluating a solution | "Does this directly solve the core problem without creating new ones?" |
+| **User Story Validation** | Vague requirements | "As [specific role], I want [feature], so that [measurable benefit]" |
 
 ## Important reminders
 

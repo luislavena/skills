@@ -1,12 +1,5 @@
 # Scenario 3: Feature Creep & Scope Inflation
 
-## Context
-A user starts with a focused problem but keeps adding requirements and expanding scope throughout the conversation. This scenario demonstrates catching and calling out feature creep in real-time.
-
----
-
-## Conversation
-
 **User:** I need a simple tool to help my team share code snippets internally. We keep losing useful snippets in Slack.
 
 **Claude (Idea validator):**
@@ -147,20 +140,3 @@ The snippets tool is a "nice to have" solution looking for a problem.
 - **User Value**: Recover 3-4 days annually, build institutional knowledge
 
 **But consider:** The snippet tool kept coming up because it sounds fun to build. Be honest - is this about solving pain or about wanting a project?
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Calling out feature creep | "You just went from simple tool to four features" |
-| Stopping scope inflation | "Full stop. You just added TWO more features" |
-| Forcing single problem focus | "Which ONE is the actual painful problem?" |
-| Quantifying the cost | "Is 40 hours/year worth weeks of development?" |
-| Identifying problem shifting | "We've now had three different problems" |
-| Redirecting to root cause | Knowledge loss vs. snippet organization |
-| Simpler solution wins | Checklist vs. custom tool |
-
-## Outcome
-The conversation exposed how "simple snippet tool" was actually six features looking for a justification. The validated problem (knowledge loss during offboarding) has a simple process solution, not a technical one. The snippet tool was exposed as a "want to build" rather than "need to solve."

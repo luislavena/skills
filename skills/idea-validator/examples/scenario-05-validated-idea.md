@@ -1,12 +1,5 @@
 # Scenario 5: Successfully Validated Idea
 
-## Context
-A user presents a problem that, through questioning, proves to be real, well-defined, and worth solving. This scenario demonstrates all four phases of the validation process leading to a solid requirement summary.
-
----
-
-## Conversation
-
 **User:** We need to build a feature that lets customers export their data from our SaaS platform. We've had several enterprise customers ask about this during sales calls.
 
 **Claude (Idea validator):**
@@ -147,31 +140,3 @@ All three are served by a single "full export" feature. No need for multiple exp
 - **User Value**: Removes a deal-blocking objection for enterprise sales; estimated $160K+ ARR recovery opportunity.
 
 **But consider:** Once this ships, make sure sales knows to proactively mention it in security reviews. The feature only helps if prospects know about it before they decide you don't have it.
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Demanding specifics | "How many exactly? What did they ask?" |
-| Quantifying impact | $160K lost, deal-blocking feedback |
-| Pressure-testing priority | "Is this the highest-impact problem?" |
-| Defining scope precisely | What data, what format, what access |
-| Understanding use cases | Compliance vs. migration vs. backup |
-| Final validation | "Would this have closed those deals?" |
-| Actionable summary | Clear problem, solution, success criteria |
-
-## Outcome
-The conversation validated a real, well-defined problem with concrete evidence (lost deals, explicit customer feedback, quantified revenue impact). The scope was tightened through questioning (one-time export only, admin access, specific data types). The final proposal is clear enough to build against with confidence that it addresses actual user needs.
-
-## Why This Idea Passed Validation
-
-| Criteria | Evidence |
-|----------|----------|
-| Real problem | Customers explicitly stated requirement |
-| Quantified impact | $160K lost ARR, 2 blocked deals |
-| Clear use cases | Compliance, migration, backup |
-| Defined scope | Specific data types, formats, access |
-| Validated demand | "Come back when you have this" |
-| Simpler alternatives ruled out | No workaround for compliance requirement |

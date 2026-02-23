@@ -1,12 +1,5 @@
 # Scenario 8: When to Back Off
 
-## Context
-A user presents a well-researched idea with solid evidence and clear requirements. This scenario demonstrates recognizing when aggressive questioning is no longer productive and transitioning to collaborative refinement.
-
----
-
-## Conversation
-
 **User:** We want to add multi-language support to our app. We've done customer research and there's strong demand from our European expansion.
 
 **Claude (Idea validator):**
@@ -119,46 +112,3 @@ I'm backing off. You've done your homework. This is a well-validated initiative 
 - **User Value**: Access to 35% higher-value European deals; removal of explicit deal-blocking objection.
 
 **No "but consider" needed** - you've already considered the alternatives and edge cases. Move to implementation.
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Starting with standard challenges | Asking for specifics on "strong demand" |
-| Recognizing solid research | Acknowledging thorough data upfront |
-| Testing edge cases | RTL, locale formatting, support |
-| Probing assumptions | Survey-to-purchase conversion rate |
-| Knowing when to stop | "I'm backing off. You've done your homework." |
-| Validating without obstructing | Final summary confirms readiness |
-
-## Outcome
-Unlike other scenarios where questioning exposes gaps, this conversation confirmed the idea was well-validated. The validator tested assumptions, probed edge cases, and ultimately confirmed the initiative is ready for implementation. No forced pivots or alternative solutions - the original idea was solid.
-
-## Signs It Was Time to Back Off
-
-| Signal | How It Appeared |
-|--------|-----------------|
-| Concrete evidence provided | 12 lost deals, survey data, CRM documentation |
-| Projections tied to data | Not just estimates - based on lost deals and discounted survey intent |
-| Edge cases already considered | RTL scoped out, support plan defined |
-| Realistic expectations | Survey intent already discounted 35% |
-| Clear scope and phasing | MVP defined, rollout planned |
-| Budget includes maintenance | Not just implementation costs |
-
-## When to Push vs. When to Stop
-
-**Keep pushing when:**
-- Answers are vague or qualitative
-- Numbers don't have sources
-- Edge cases haven't been considered
-- No alternatives have been explored
-- Enthusiasm exceeds evidence
-
-**Back off when:**
-- Data backs claims
-- Projections are conservative
-- Scope is defined and bounded
-- Risks are acknowledged
-- User has done the work
