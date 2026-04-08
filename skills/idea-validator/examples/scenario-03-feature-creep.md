@@ -137,6 +137,7 @@ The snippets tool is a "nice to have" solution looking for a problem.
 - **Solution**: Implement offboarding checklist requiring documentation of key code, decisions, and context
 - **Success Criteria**: Next departure causes <2 days of rework
 - **Constraints**: No new tooling - use existing Notion/wiki/repo READMEs
+- **Risks/Unknowns**: Adoption of new checklist process; quality of documentation produced.
 - **User Value**: Recover 3-4 days annually, build institutional knowledge
 
 **But consider:** The snippet tool kept coming up because it sounds fun to build. Is this about solving pain or about wanting a project?

@@ -137,6 +137,7 @@ All three are served by a single "full export" feature. No need for multiple exp
 - **Solution**: Admin-only, on-demand full data export including user content, documents, account info, audit logs, and configuration. Formats: JSON for structured data, CSV for tabular data, original format for documents.
 - **Success Criteria**: Next enterprise security review passes data portability requirement; win rate on enterprise deals increases.
 - **Constraints**: One-time export only (no incremental/scheduled), admin access only, need to address PII handling for multi-user data.
+- **Risks/Unknowns**: PII exposure in exports (requires filtering); sales adoption of new talking point.
 - **User Value**: Removes a deal-blocking objection for enterprise sales; estimated $160K+ ARR recovery opportunity.
 
 **But consider:** Once this ships, make sure sales knows to proactively mention it in security reviews. The feature only helps if prospects know about it before they decide you don't have it.

@@ -137,6 +137,7 @@ Alerts tell you "something is wrong." APM/observability tells you "here's what's
 - **Solution**: Implement observability (APM) to diagnose root cause of degradation. Instrument: memory usage, DB query times, connection pool status, cache metrics.
 - **Success Criteria**: Successfully diagnose cause during next incident, implement permanent fix, reduce incident frequency to 0.
 - **Constraints**: Use existing APM tools (Datadog, New Relic, or OSS stack) - don't build custom monitoring.
+- **Risks/Unknowns**: Complexity of instrumenting legacy code; finding no obvious cause (deeper architectural issue).
 - **User Value**: Eliminate recurring incidents rather than responding faster to them.
 
 **But consider:** The "restart to fix it" culture is a warning sign of technical debt. If this is a symptom of a larger pattern (poor visibility, unclear system behavior), you may need a broader reliability initiative, not just one fix.

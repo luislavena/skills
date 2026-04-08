@@ -4,22 +4,6 @@
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: Let's validate this. When you say "strong demand," what does that mean specifically?
-- How many customers or prospects asked for this?
-- Is it blocking sales, or nice to have?
-- Which languages are being requested?
-
----
-
-**User:** Here's what we know:
-- 23 enterprise prospects in Q3 were from non-English markets; 18 asked about localization during sales
-- 12 deals were lost explicitly citing "English-only" as a reason (documented in CRM)
-- Our survey of 400 European trial users showed 72% would "definitely" or "likely" upgrade if their local language was supported
-- Top requested languages: German (31%), French (28%), Spanish (22%), Dutch (9%)
-- Average deal size in EU markets is 35% higher than US deals
-
-**Claude (Idea validator):**
-
 **Critical Question**: Let's validate this. When you say "strong demand," what does that mean specifically?
 - How many customers or prospects asked for this?
 - Is it blocking sales, or nice to have?
@@ -125,6 +109,7 @@ I'm stepping back. You've done your homework. This is a well-validated initiativ
 - **Solution**: Phased localization - German and French at launch, Spanish +3 months, Dutch +9 months. Includes locale formatting and multilingual support.
 - **Success Criteria**: Win back 40% of lost EU deals within 6 months; achieve $800K incremental ARR by end of Year 1.
 - **Constraints**: RTL out of scope; 4 languages max in Year 1; $150K implementation + $40K/year maintenance.
+- **Risks/Unknowns**: Survey intent conversion (modeled at 35%); technical complexity of RTL future expansion.
 - **User Value**: Access to 35% higher-value European deals; removal of explicit deal-blocking objection.
 
 **No "but consider" needed** - you've already considered the alternatives and edge cases. Move to implementation.
