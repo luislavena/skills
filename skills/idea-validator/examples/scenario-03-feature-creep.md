@@ -1,17 +1,10 @@
 # Scenario 3: Feature Creep & Scope Inflation
 
-## Context
-A user starts with a focused problem but keeps adding requirements and expanding scope throughout the conversation. This scenario demonstrates catching and calling out feature creep in real-time.
-
----
-
-## Conversation
-
 **User:** I need a simple tool to help my team share code snippets internally. We keep losing useful snippets in Slack.
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: Okay, let's validate this. How often does this actually happen - someone needs a snippet and can't find it?
+**Critical Question**: Okay, let's validate this. How often does this actually happen - someone needs a snippet and can't find it?
 
 Also, have you tried:
 - Pinning snippets in a dedicated Slack channel?
@@ -26,7 +19,7 @@ Why would you build something when these free solutions exist?
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Wait - you just went from "simple tool to share snippets" to:
+**Challenge**: Wait - you just went from "simple tool to share snippets" to:
 1. Automatic capture from Slack
 2. Auto-organization
 3. Language detection/tagging
@@ -34,7 +27,7 @@ Why would you build something when these free solutions exist?
 
 That's four features in one breath. Let's slow down.
 
-🤔 **Critical Question**: What's the CORE problem - that snippets get lost, or that people don't remember to save them? Those are different problems:
+**Critical Question**: What's the CORE problem - that snippets get lost, or that people don't remember to save them? Those are different problems:
 - Lost snippets → Better organization/search
 - People don't save → Behavior change or automation
 
@@ -46,11 +39,11 @@ Which one is actually causing pain?
 
 **Claude (Idea validator):**
 
-❌ **Red Flag**: Full stop. You just added TWO more features:
+**Observation**: Let's pause here. You just added TWO more features:
 - VS Code integration
 - AI-powered snippet suggestions
 
-⚠️ **Challenge**: We started with "simple tool to share snippets" and you're now describing:
+**Challenge**: We started with "simple tool to share snippets" and you're now describing:
 1. Slack integration with auto-capture
 2. Organization system
 3. Language detection
@@ -60,7 +53,7 @@ Which one is actually causing pain?
 
 This is textbook scope inflation. None of these have been validated.
 
-🤔 **Critical Question**: Let's go back to basics. Without ANY tool, what happens today when someone needs a snippet they remember seeing before?
+**Critical Question**: Let's go back to basics. Without ANY tool, what happens today when someone needs a snippet they remember seeing before?
 
 ---
 
@@ -68,9 +61,9 @@ This is textbook scope inflation. None of these have been validated.
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: So the actual cost is 5-10 minutes and a Slack message. How often does this happen?
+**Challenge**: So the actual cost is 5-10 minutes and a Slack message. How often does this happen?
 
-🤔 **Critical Question**: Is 5-10 minutes occasionally really worth building a system with 6 features, Slack integration, VS Code extensions, and AI? 
+**Critical Question**: Is 5-10 minutes occasionally really worth building a system with 6 features, Slack integration, VS Code extensions, and AI? 
 
 Let's do the math:
 - If this happens once per day across a 10-person team
@@ -84,9 +77,9 @@ Let's do the math:
 
 **Claude (Idea validator):**
 
-🤔 **Critical Question**: Now that's a different problem: knowledge retention, not snippet sharing. These need different solutions.
+**Critical Question**: Now that's a different problem: knowledge retention, not snippet sharing. These need different solutions.
 
-⚠️ **Challenge**: You keep shifting the problem. We've now had three different problems:
+**Challenge**: You keep shifting the problem. We've now had three different problems:
 1. Finding snippets in Slack (5-10 min cost)
 2. People not saving snippets (behavior issue)  
 3. Knowledge loss when people leave (onboarding/documentation issue)
@@ -99,9 +92,9 @@ Which ONE is the actual painful problem you want to solve? Pick one.
 
 **Claude (Idea validator):**
 
-✅ **Valid Point**: NOW we have something concrete. You lost time recreating utilities when someone left. That's real, measurable pain.
+**Valid Point**: NOW we have something concrete. You lost time recreating utilities when someone left. That's real, measurable pain.
 
-🤔 **Critical Question**: 
+**Critical Question**: 
 - How long did the rewrite take?
 - How often do people leave your team?
 - What specific knowledge was lost? (snippets, or also architecture decisions, context, etc.?)
@@ -114,7 +107,7 @@ And more importantly: is this a "code snippets" problem or a "documentation" pro
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: Okay, so the real problem is: "When developers leave, we lose institutional knowledge including code, decisions, and context. This costs us roughly 1 week of work per departure."
+**Challenge**: Okay, so the real problem is: "When developers leave, we lose institutional knowledge including code, decisions, and context. This costs us roughly 1 week of work per departure."
 
 That's NOT solved by a snippet sharing tool. That's solved by:
 - Better documentation practices
@@ -122,7 +115,7 @@ That's NOT solved by a snippet sharing tool. That's solved by:
 - Thorough code reviews
 - Onboarding/offboarding processes
 
-🤔 **Critical Question**: What's cheaper:
+**Critical Question**: What's cheaper:
 - Building a custom tool (weeks of work)
 - Creating a simple offboarding checklist where departing devs document their key work?
 
@@ -132,7 +125,7 @@ That's NOT solved by a snippet sharing tool. That's solved by:
 
 **Claude (Idea validator):**
 
-⚠️ **Challenge**: "Would help" is weak justification for building software. You've now agreed:
+**Challenge**: "Would help" is weak justification for building software. You've now agreed:
 - Snippet finding costs 5-10 min occasionally
 - The real pain is knowledge loss (solved by process, not tools)
 - A checklist addresses the actual validated problem
@@ -144,23 +137,7 @@ The snippets tool is a "nice to have" solution looking for a problem.
 - **Solution**: Implement offboarding checklist requiring documentation of key code, decisions, and context
 - **Success Criteria**: Next departure causes <2 days of rework
 - **Constraints**: No new tooling - use existing Notion/wiki/repo READMEs
+- **Risks/Unknowns**: Adoption of new checklist process; quality of documentation produced.
 - **User Value**: Recover 3-4 days annually, build institutional knowledge
 
-**But consider:** The snippet tool kept coming up because it sounds fun to build. Be honest - is this about solving pain or about wanting a project?
-
----
-
-## Key Techniques Demonstrated
-
-| Technique | Where Used |
-|-----------|------------|
-| Calling out feature creep | "You just went from simple tool to four features" |
-| Stopping scope inflation | "Full stop. You just added TWO more features" |
-| Forcing single problem focus | "Which ONE is the actual painful problem?" |
-| Quantifying the cost | "Is 40 hours/year worth weeks of development?" |
-| Identifying problem shifting | "We've now had three different problems" |
-| Redirecting to root cause | Knowledge loss vs. snippet organization |
-| Simpler solution wins | Checklist vs. custom tool |
-
-## Outcome
-The conversation exposed how "simple snippet tool" was actually six features looking for a justification. The validated problem (knowledge loss during offboarding) has a simple process solution, not a technical one. The snippet tool was exposed as a "want to build" rather than "need to solve."
+**But consider:** The snippet tool kept coming up because it sounds fun to build. Is this about solving pain or about wanting a project?
